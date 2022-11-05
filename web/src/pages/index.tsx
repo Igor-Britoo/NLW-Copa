@@ -35,7 +35,7 @@ export default function Home(props:HomeProps) {
       title: poolTitle
     })
     .then(async response => {
-      const {code} = response.data.pool
+      const {code} = response.data
       await navigator.clipboard.writeText(code)
       alert('Bolão criado com sucesso, o código foi copiado para área de transferência!')
       setPooltitle('')
