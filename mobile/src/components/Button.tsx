@@ -28,7 +28,7 @@ export function Button({title, type = "PRIMARY", ...rest}: Props){
                 fontFamily="heading"
                 color={type==='SECONDARY' ? 'white' : 'black'}
             >
-               {title}
+               {title.toUpperCase()}
             </Text>
         </ButtonNativeBase>
     )
