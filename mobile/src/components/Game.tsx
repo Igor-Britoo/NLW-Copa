@@ -28,9 +28,11 @@ interface Props {
   onGuessConfirm: () => void;
   setFirstTeamPoints: (value: string) => void;
   setSecondTeamPoints: (value: string) => void;
+  firstTeamPoints: string;
+  secondTeamPoints: string;
 };
 
-export function Game({ data, setFirstTeamPoints, setSecondTeamPoints, onGuessConfirm }: Props) {
+export function Game({ data, setFirstTeamPoints, setSecondTeamPoints, firstTeamPoints, secondTeamPoints, onGuessConfirm }: Props) {
   const { colors, sizes } = useTheme();
 
   const when = dayjs(data.date).locale(ptBR).format("DD [de] MMMM [de] YYYY [às] HH:00[h]")
@@ -59,6 +61,7 @@ export function Game({ data, setFirstTeamPoints, setSecondTeamPoints, onGuessCon
           code={data.firstTeamCountryCode}
           position="right"
           onChangeText={setFirstTeamPoints}
+          points={firstTeamPoints}
         />
 
         <X color={colors.gray[300]} size={sizes[6]} />
@@ -67,6 +70,7 @@ export function Game({ data, setFirstTeamPoints, setSecondTeamPoints, onGuessCon
           code={data.secondTeamCountryCode}
           position="left"
           onChangeText={setSecondTeamPoints}
+          points={secondTeamPoints}
         />
       </HStack>
 

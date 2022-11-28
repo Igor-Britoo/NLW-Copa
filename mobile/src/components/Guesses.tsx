@@ -99,6 +99,8 @@ export function Guesses({ poolId, code }: Props) {
           data={item}
           setFirstTeamPoints={setFirstTeamPoints}
           setSecondTeamPoints={setSecondTeamPoints}
+          firstTeamPoints={item.guess ? String(item.guess.firstTeamPoints) : firstTeamPoints }
+          secondTeamPoints={item.guess ? String(item.guess.secondTeamPoints) : secondTeamPoints }
           onGuessConfirm={() => {handleGuessConfirm(item.id)}}
         />
       )}

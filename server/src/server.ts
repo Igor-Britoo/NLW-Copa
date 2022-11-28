@@ -22,7 +22,7 @@ async function bootstrap(){
     await fastify.register(jwt,{
         secret: 'nlwcopa',
     })
-
+    
     await fastify.register(authRoutes)
     await fastify.register(gameRoutes)
     await fastify.register(guessRoutes)
